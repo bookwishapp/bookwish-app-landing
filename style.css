@@ -1,4 +1,418 @@
-/* Import your brand colors */
+/* Import your exact brand colors */
+:root {
+  --color-primary-cream: #F5EDE3;
+  --color-secondary-cream: #EDE3D6;
+  --color-pastel-peach: #FAE6D9;
+  --color-pastel-lavender: #E6D9FA;
+  --color-pastel-mint: #D9FAE6;
+  --color-surface: #E6DDD2;
+  --color-card-bg: #FFFFFF;
+  --color-primary: #333333;
+  --color-secondary: #666666;
+  --color-logo-blue: #3B9AE1;
+  --color-logo-teal: #5FBDAE;
+  --color-logo-orange: #F4A261;
+  --color-logo-coral: #E76F51;
+  --color-status-want: #D94D66;
+  --color-status-own: #3380CC;
+  --color-status-read: #33B366;
+  --color-status-reading: #E69933;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-primary-cream) 0%, var(--color-pastel-peach) 50%, var(--color-pastel-lavender) 100%);
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Header - exact match to main site */
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.logo-container {
+  margin-right: 2rem;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+}
+
+.main-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-logo-blue);
+  line-height: 1;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+  font-weight: 500;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--color-secondary);
+  margin-top: 1rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Reading Journey */
+.reading-journey {
+  margin-bottom: 3rem;
+}
+
+.reading-journey h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+}
+
+.status-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.status-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid;
+}
+
+.status-badge.want {
+  background-color: rgba(217, 77, 102, 0.2);
+  border-color: rgba(217, 77, 102, 0.4);
+  color: var(--color-status-want);
+  font-weight: 600;
+}
+
+.status-badge.own {
+  background-color: rgba(51, 128, 204, 0.2);
+  border-color: rgba(51, 128, 204, 0.4);
+  color: var(--color-status-own);
+  font-weight: 600;
+}
+
+.status-badge.reading {
+  background-color: rgba(230, 153, 51, 0.2);
+  border-color: rgba(230, 153, 51, 0.4);
+  color: var(--color-status-reading);
+  font-weight: 600;
+}
+
+.status-badge.read {
+  background-color: rgba(51, 179, 102, 0.2);
+  border-color: rgba(51, 179, 102, 0.4);
+  color: var(--color-status-read);
+  font-weight: 600;
+}
+
+/* Card styles - exact match */
+.how-it-works-card,
+.app-download-card,
+.registry-info-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.how-it-works-card h2,
+.app-download-card h2,
+.registry-info-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+}
+
+/* Steps Grid */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.step {
+  text-align: center;
+}
+
+.step-number {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.step-number:hover {
+  transform: scale(1.1);
+}
+
+.step-number.blue { background-color: var(--color-logo-blue); }
+.step-number.orange { background-color: var(--color-logo-orange); }
+.step-number.coral { background-color: var(--color-logo-coral); }
+
+.step h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.step p {
+  color: var(--color-secondary);
+}
+
+/* App Download Section */
+.app-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-secondary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.features-pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.feature-card {
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border: 1px solid;
+}
+
+.feature-card.free {
+  background: linear-gradient(135deg, rgba(95, 189, 174, 0.2), var(--color-pastel-mint));
+  border-color: rgba(95, 189, 174, 0.3);
+}
+
+.feature-card.premium {
+  background: linear-gradient(135deg, rgba(231, 111, 81, 0.2), var(--color-pastel-lavender));
+  border-color: rgba(231, 111, 81, 0.3);
+}
+
+.feature-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.feature-icon.teal { background-color: var(--color-logo-teal); }
+.feature-icon.coral { background-color: var(--color-logo-coral); }
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.feature-card ul {
+  list-style: none;
+  color: var(--color-secondary);
+}
+
+.feature-card li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card li::before {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+
+.feature-card.free li::before {
+  background-color: var(--color-logo-teal);
+}
+
+.feature-card.premium li::before {
+  background-color: var(--color-logo-coral);
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.download-button img {
+  height: 60px;
+  width: auto;
+}
+
+.sample-button {
+  background-color: var(--color-logo-coral);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.sample-button:hover {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+}
+
+/* Registry Info */
+.registry-info-card {
+  text-align: center;
+}
+
+.registry-icon {
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, var(--color-logo-blue), var(--color-logo-coral));
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.registry-info-card p {
+  font-size: 1.25rem;
+  color: var(--color-secondary);
+  margin-bottom: 2rem;
+}
+
+.web-link {
+  color: var(--color-logo-blue);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.web-link:hover {
+  color: var(--color-logo-coral);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-surface);
+  color: var(--color-secondary);
+}
+
+.footer-links {
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+.footer-links a:hover {
+  color: var(--color-logo-blue);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  
+  .logo-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .logo-container {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .main-title {
+    font-size: 3rem;
+  }
+  
+  .tagline {
+    font-size: 1.25rem;
+  }
+  
+  .status-badges {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+}/* Import your brand colors */
 :root {
   --color-primary-cream: #F5EDE3;
   --color-secondary-cream: #EDE3D6;
